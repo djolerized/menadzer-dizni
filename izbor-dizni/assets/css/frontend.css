@@ -1,0 +1,323 @@
+/* Frontend Styles */
+
+/* Kultura Selection Screen */
+.izbor-dizni-kultura-selection {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.izbor-dizni-kultura-selection h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #333;
+}
+
+.izbor-dizni-kultura-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.izbor-dizni-kultura-item {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.izbor-dizni-kultura-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.izbor-dizni-kultura-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.izbor-dizni-kultura-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.izbor-dizni-kultura-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.izbor-dizni-kultura-item h3 {
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Kultura View Screen */
+.izbor-dizni-kultura-view {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.izbor-dizni-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.izbor-dizni-header h2 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.izbor-dizni-back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0073aa;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.izbor-dizni-back-button:hover {
+    background: #005177;
+    color: white;
+}
+
+/* Canvas Container */
+.izbor-dizni-canvas-container {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.izbor-dizni-canvas-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.izbor-dizni-canvas-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.izbor-dizni-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Nozzle Icons */
+.izbor-dizni-nozzle {
+    position: absolute;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.2s;
+    z-index: 10;
+}
+
+.izbor-dizni-nozzle:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    z-index: 20;
+}
+
+.izbor-dizni-nozzle-image {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #0073aa;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.2s;
+}
+
+.izbor-dizni-nozzle:hover .izbor-dizni-nozzle-image {
+    border-color: #005177;
+}
+
+.izbor-dizni-nozzle-placeholder {
+    width: 60px;
+    height: 60px;
+    background: #0073aa;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Popup Modal */
+.izbor-dizni-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.izbor-dizni-popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.izbor-dizni-popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.izbor-dizni-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc3232;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.izbor-dizni-popup-close:hover {
+    background: #a00;
+}
+
+.izbor-dizni-popup-body h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.izbor-dizni-popup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.izbor-dizni-popup-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.izbor-dizni-popup-image h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.izbor-dizni-popup-image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.izbor-dizni-popup-data h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #333;
+}
+
+.izbor-dizni-popup-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.izbor-dizni-popup-table th,
+.izbor-dizni-popup-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.izbor-dizni-popup-table th {
+    font-weight: bold;
+    color: #333;
+    width: 40%;
+}
+
+.izbor-dizni-popup-table td {
+    color: #666;
+}
+
+.izbor-dizni-loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .izbor-dizni-kultura-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .izbor-dizni-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .izbor-dizni-popup-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .izbor-dizni-popup-content {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .izbor-dizni-nozzle-image,
+    .izbor-dizni-nozzle-placeholder {
+        width: 40px;
+        height: 40px;
+    }
+}
