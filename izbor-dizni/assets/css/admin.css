@@ -13,61 +13,77 @@
     display: inline-block;
     margin-top: 20px;
     max-width: 100%;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #izbor-dizni-canvas-image {
     max-width: 100%;
     height: auto;
     display: block;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
+    position: relative;
+    z-index: 1;
 }
 
 #izbor-dizni-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
     pointer-events: none;
+    z-index: 10;
 }
 
 .izbor-dizni-nozzle-icon {
     position: absolute;
     cursor: move;
     pointer-events: auto;
-    z-index: 10;
+    z-index: 100;
+    transition: opacity 0.2s, transform 0.1s;
 }
 
 .izbor-dizni-nozzle-icon img,
-.izbor-dizni-nozzle-icon > div {
+.izbor-dizni-nozzle-icon > div:not(.izbor-dizni-remove-nozzle) {
     pointer-events: none;
     user-select: none;
+    -webkit-user-drag: none;
 }
 
 .izbor-dizni-nozzle-icon:hover {
-    z-index: 20;
+    z-index: 200;
+    transform: translate(-50%, -50%) scale(1.05) !important;
+}
+
+.izbor-dizni-nozzle-icon:active {
+    cursor: grabbing;
 }
 
 .izbor-dizni-remove-nozzle {
     position: absolute;
-    top: -8px;
-    right: -8px;
+    top: -10px;
+    right: -10px;
     background: #dc3232;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1;
     font-weight: bold;
     pointer-events: auto;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
+    z-index: 101;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .izbor-dizni-remove-nozzle:hover {
     background: #a00;
+    transform: scale(1.1);
 }
 
 #izbor-dizni-nozzle-select {
@@ -77,19 +93,43 @@
 
 /* Draggable helper styles */
 .ui-draggable-dragging {
-    opacity: 0.7;
-    z-index: 1000;
+    opacity: 0.8 !important;
+    z-index: 1000 !important;
+}
+
+/* Better visual feedback during drag */
+.izbor-dizni-nozzle-icon.ui-draggable-dragging img,
+.izbor-dizni-nozzle-icon.ui-draggable-dragging > div:not(.izbor-dizni-remove-nozzle) {
+    border-color: #2271b1 !important;
 }
 
 /* ACF field adjustments */
+.acf-field[data-name="pozicionirane_dizne"] {
+    margin-top: 20px;
+}
+
+.acf-field[data-name="pozicionirane_dizne"] .acf-label {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
 .acf-field[data-name="pozicionirane_dizne"] .acf-input {
-    /* Keep the repeater visible but less prominent */
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 3px;
 }
 
 .acf-field[data-name="pozicionirane_dizne"] .acf-table {
-    opacity: 0.6;
+    opacity: 0.7;
+    transition: opacity 0.3s;
 }
 
 .acf-field[data-name="pozicionirane_dizne"] .acf-table:hover {
     opacity: 1;
+}
+
+/* Instructions */
+.izbor-dizni-controls + p.description {
+    font-style: italic;
+    color: #666;
 }
