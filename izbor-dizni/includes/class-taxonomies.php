@@ -10,13 +10,6 @@ if (!defined('ABSPATH')) {
 class Izbor_Dizni_Taxonomies {
 
     /**
-     * Initialize
-     */
-    public static function init() {
-        add_action('init', array(__CLASS__, 'register_taxonomies'));
-    }
-
-    /**
      * Register taxonomies
      */
     public static function register_taxonomies() {

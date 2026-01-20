@@ -10,13 +10,6 @@ if (!defined('ABSPATH')) {
 class Izbor_Dizni_Post_Types {
 
     /**
-     * Initialize
-     */
-    public static function init() {
-        add_action('init', array(__CLASS__, 'register_post_types'));
-    }
-
-    /**
      * Register post types
      */
     public static function register_post_types() {
