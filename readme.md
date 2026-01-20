@@ -1,5 +1,5 @@
 PROJECT: Izbor dizni – interaktivna PPT prezentacija (WordPress plugin)
-TARGET: Codex – kompletna funkcionalna specifikacija
+TARGET: Codex – kompletna funkcionalna specifikacija (DOPUNJENA – DRAG & DROP)
 
 ==================================================
 1. OPIS PROJEKTA
@@ -80,23 +80,52 @@ Polja:
 - pozicija_x (number, %)
 - pozicija_y (number, %)
 
+NAPOMENA:
+pozicija_x i pozicija_y se NE UNOSE ručno u finalnoj verziji,
+već se automatski popunjavaju kroz drag & drop interfejs u adminu.
+
 ==================================================
-3. ADMIN WORKFLOW
+3. ADMIN DRAG & DROP INTERFEJS (OBAVEZNO)
 ==================================================
 
-1. Administrator kreira dizne (CPT Dizna)
-2. Popunjava sve tehničke podatke dizne
-3. Kreira kulturu (taxonomy Kultura)
-4. Uploaduje sliku kulture u fazama rasta
-5. Dodaje dizne iznad slike:
-   - bira diznu
-   - unosi X/Y poziciju u procentima
-6. Snima promene
+----------------------------------
+3.1 Admin prikaz kulture
+----------------------------------
+Na edit stranici kulture mora postojati:
+- preview slike kulture (slika_kulture_faze)
+- overlay sloj iznad slike
+- prikaz svih već dodatih dizni kao ikonice
 
-Napomena:
-- ista dizna može biti dodata na više kultura
-- dizne se pozicioniraju manuelno
-- drag & drop je opcija za Phase 2
+----------------------------------
+3.2 Dodavanje dizne na sliku
+----------------------------------
+Admin workflow:
+
+1. Admin klikne na dugme „Dodaj diznu“
+2. Otvara se modal ili dropdown sa listom svih CPT dizni
+3. Admin izabere diznu
+4. Ikonica dizne se pojavljuje iznad slike kulture
+5. Admin PREVLAČI (drag) ikonicu dizne na željeno mesto
+6. Plugin automatski:
+   - računa X i Y poziciju u procentima
+   - upisuje vrednosti u pozicija_x i pozicija_y
+7. Pozicija se snima pri Save / Update kulture
+
+----------------------------------
+3.3 Izmena i brisanje
+----------------------------------
+- Svaka dizna na slici može:
+  - ponovo da se prevuče (reposition)
+  - da se ukloni (remove)
+- Vizuelni preview uvek mora odgovarati stvarnom frontend prikazu
+
+----------------------------------
+3.4 Tehnički zahtevi (admin)
+----------------------------------
+- JavaScript (vanilla JS ili jQuery)
+- HTML5 drag & drop ili mouse events
+- Pozicioniranje u procentima (%)
+- Responsive ponašanje (skaliranje slike)
 
 ==================================================
 4. FRONTEND FUNKCIONALNOST
@@ -148,17 +177,17 @@ Direktna kultura:
 
 - Plugin je nezavisan od teme
 - Responsive (desktop + mobile)
-- JavaScript za popup i pozicioniranje
+- JavaScript za popup i drag & drop
 - Bez kalkulacija i automatike
 - Struktura 1:1 sa PowerPoint prezentacijom
 
 ==================================================
-7. FAZA 2 (OPCIONO)
+7. FAZA 2 (REZERVA – AKO TREBA)
 ==================================================
 
-- Drag & drop pozicioniranje dizni u adminu
-- Vizuelni preview u admin panelu
-- Više slika po kulturi
+- Više slika po kulturi (različite primene)
+- Zoom slike u adminu
+- Copy/paste pozicija dizni između kultura
 - Multilingual support
 
 ==================================================
