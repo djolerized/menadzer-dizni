@@ -1,0 +1,95 @@
+/* Admin Drag & Drop Interface Styles */
+
+#izbor-dizni-drag-drop-container {
+    margin: 20px 0;
+}
+
+.izbor-dizni-controls {
+    margin-bottom: 15px;
+}
+
+#izbor-dizni-canvas-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+#izbor-dizni-canvas-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ddd;
+}
+
+#izbor-dizni-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.izbor-dizni-nozzle-icon {
+    position: absolute;
+    cursor: move;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.izbor-dizni-nozzle-icon img,
+.izbor-dizni-nozzle-icon > div {
+    pointer-events: none;
+    user-select: none;
+}
+
+.izbor-dizni-nozzle-icon:hover {
+    z-index: 20;
+}
+
+.izbor-dizni-remove-nozzle {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #dc3232;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: bold;
+    pointer-events: auto;
+    transition: background-color 0.2s;
+}
+
+.izbor-dizni-remove-nozzle:hover {
+    background: #a00;
+}
+
+#izbor-dizni-nozzle-select {
+    min-width: 200px;
+    padding: 5px;
+}
+
+/* Draggable helper styles */
+.ui-draggable-dragging {
+    opacity: 0.7;
+    z-index: 1000;
+}
+
+/* ACF field adjustments */
+.acf-field[data-name="pozicionirane_dizne"] .acf-input {
+    /* Keep the repeater visible but less prominent */
+}
+
+.acf-field[data-name="pozicionirane_dizne"] .acf-table {
+    opacity: 0.6;
+}
+
+.acf-field[data-name="pozicionirane_dizne"] .acf-table:hover {
+    opacity: 1;
+}
